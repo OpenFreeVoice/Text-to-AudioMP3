@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextToAudioMP3 - Free Text-to-Speech Converter</title>
+    <meta name="description" content="Convert text to audio MP3 files instantly. Free online text-to-speech converter with multiple AI voices.">
+    <meta name="keywords" content="text to speech, text to audio, MP3 converter, TTS, voice generator, free">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎵</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>TextToAudioMP3</h1>
+            </div>
+        </header>
+
+        <main>
+            <!-- Control Panel -->
+            <div class="input-section">
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="language">🌍 Language:</label>
+                        <select id="language">
+                            <option value="en-US">English (US)</option>
+                            <option value="en-GB">English (UK)</option>
+                            <option value="es-ES">Spanish</option>
+                            <option value="fr-FR">French</option>
+                            <option value="de-DE">German</option>
+                            <option value="it-IT">Italian</option>
+                            <option value="pt-BR">Portuguese (Brazil)</option>
+                            <option value="ja-JP">Japanese</option>
+                            <option value="ko-KR">Korean</option>
+                            <option value="zh-CN">Chinese (Mandarin)</option>
+                            <option value="hi-IN">Hindi</option>
+                            <option value="ar-SA">Arabic</option>
+                            <option value="ru-RU">Russian</option>
+                            <option value="nl-NL">Dutch</option>
+                            <option value="sv-SE">Swedish</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="voice">🎤 Voice:</label>
+                        <select id="voice">
+                            <option value="">Loading voices...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Text Input -->
+                <div class="text-input">
+                    <label for="textInput" class="text-label">📝 Enter Your Text</label>
+                    <textarea id="textInput" placeholder="Enter your text here (up to 3,000 characters)...
+
+Try this sample: Welcome to TextToAudioMP3! This tool converts your text into high-quality audio files instantly. Choose from multiple voices and languages to create professional audio content. Perfect for presentations, audiobooks, or learning new languages." maxlength="3000"></textarea>
+                    <div class="character-count">
+                        <span id="charCount">0</span> / 3,000 characters
+                        <div class="character-indicators">
+                            <div class="indicator safe">📗 Safe (0-2000)</div>
+                            <div class="indicator warning">📙 Warning (2000-2500)</div>
+                            <div class="indicator danger">📕 Limit (2500-3000)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button id="playBtn" class="btn btn-primary">
+                        <span class="btn-icon">▶</span>
+                        <span class="btn-text">Play</span>
+                    </button>
+                    <button id="pauseBtn" class="btn btn-secondary" disabled>
+                        <span class="btn-icon">⏸</span>
+                        <span class="btn-text">Pause</span>
+                    </button>
+                    <button id="stopBtn" class="btn btn-danger" disabled>
+                        <span class="btn-icon">⏹</span>
+                        <span class="btn-text">Stop</span>
+                    </button>
+                    <button id="downloadBtn" class="btn btn-success" disabled>
+                        <span class="btn-icon">💾</span>
+                        <span class="btn-text">Download MP3</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Status & Audio Player -->
+            <div class="audio-section">
+                <div id="status" class="status-message"></div>
+                <audio id="audioPlayer" controls style="display: none;"></audio>
+            </div>
+
+            <!-- Available Voices Info -->
+            <div class="voice-info">
+                <h3>🎭 Available Voices</h3>
+                <p>This tool uses your browser's built-in text-to-speech engine. Available voices depend on your operating system:</p>
+                <div class="voice-examples">
+                    <div class="voice-example">
+                        <strong>Windows:</strong> Microsoft voices (David, Zira, Mark, etc.)
+                    </div>
+                    <div class="voice-example">
+                        <strong>macOS:</strong> Apple voices (Alex, Samantha, Victoria, etc.)
+                    </div>
+                    <div class="voice-example">
+                        <strong>Chrome:</strong> Google voices (additional high-quality options)
+                    </div>
+                    <div class="voice-example">
+                        <strong>Mobile:</strong> System TTS voices for iOS/Android
+                    </div>
+                </div>
+                <div id="voiceCount" class="voice-count">Loading available voices...</div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-simple">
+                <div class="footer-text">©TextToAudioMP3</div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
